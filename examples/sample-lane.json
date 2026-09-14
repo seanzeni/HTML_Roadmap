@@ -1,0 +1,27 @@
+{
+  "$schema": "../schemas/lane.schema.json",
+  "id": "example-team",
+  "label": "Example Team",
+  "rows": 2,
+  "sub_lane": false,
+  "entries": [
+    {
+      "id": "example-planning",
+      "start": 2027,
+      "end": 2028,
+      "label": "Planning",
+      "category": "program",
+      "row": 1,
+      "detail": "Describe the work and expected result here."
+    },
+    {
+      "id": "example-decision",
+      "point": 2028.5,
+      "label": "Go / No-Go",
+      "category": "decision",
+      "row": 2,
+      "when": {"solution": "ibm"},
+      "detail": "Explain the decision, owner, and success criteria here."
+    }
+  ]
+}

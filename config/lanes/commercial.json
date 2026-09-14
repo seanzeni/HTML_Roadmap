@@ -1,0 +1,9 @@
+{
+  "$schema": "../../schemas/lane.schema.json",
+  "id": "commercial", "label": "Commercial", "rows": 2,
+  "entries": [
+    {"id": "commercial-aps", "start": 2026, "end": 2030, "label": "APS Conversion", "category": "customer", "row": 1, "detail": "Commercial APS conversion completes by the end of 2029."},
+    {"id": "commercial-ibm", "start": 2029, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm"}, "detail": "Commercial begins moving production-ready code to the IBM solution in 2029."},
+    {"id": "commercial-rocket", "start": 2030, "end": 2032, "label": "Rocket Migration", "category": "migration", "row": 2, "when": {"solution": "rocket"}, "detail": "Commercial begins moving production-ready code to Rocket ChangeMan in 2030."}
+  ]
+}

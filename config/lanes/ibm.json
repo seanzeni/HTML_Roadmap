@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schemas/lane.schema.json",
+  "id": "ibm", "label": "IBM Solution", "sub_lane": true, "rows": 3,
+  "entries": [
+    {"id": "idzee-design", "start": 2027, "end": 2028, "label": "IDzEE Design", "category": "program", "row": 1, "when": {"solution": "ibm"}, "detail": "Pull down IDzEE, then configure, design, document, and plan the new SDLC in 2027."},
+    {"id": "dr-planning", "start": 2027, "end": 2028, "label": "DR Planning", "category": "recovery", "row": 2, "when": {"solution": "ibm"}, "detail": "Design disaster recovery for GitHub, Artifactory, and DevOps Deploy."},
+    {"id": "debugger-test", "start": 2027, "end": 2028, "label": "Test IBM Debugger", "category": "program", "row": 3, "when": {"solution": "ibm"}, "detail": "Evaluate IBM Debugger as the InterTest replacement."},
+    {"id": "dr-deployment", "start": 2028, "end": 2029.5, "label": "DR Deployment", "category": "recovery", "row": 1, "when": {"solution": "ibm"}, "detail": "Deploy distributed-tool disaster recovery and validate it during biannual exercises through mid-2029."},
+    {"id": "dbb-recovery", "start": 2028, "end": 2029, "label": "DBB Recovery", "category": "recovery", "row": 2, "when": {"solution": "ibm"}, "detail": "Test mainframe DBB recovery and deploy the new SDLC lifecycle environments."},
+    {"id": "ibm-migration", "start": 2029, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 1, "when": {"solution": "ibm"}, "detail": "Customers begin moving production-ready code into the IBM solution in 2029."},
+    {"id": "adfz-early", "start": 2030, "end": 2032, "label": "ADFz Drawdown", "category": "program", "row": 2, "when": {"solution": "ibm", "contract": "early"}, "detail": "Draw down ADFz in 2030 for File Manager, Fault Analyzer, and Application Performance Analyzer."},
+    {"id": "adfz-standard", "start": 2028, "end": 2031, "label": "ADFz Drawdown", "category": "program", "row": 2, "when": {"solution": "ibm", "contract": "standard"}, "detail": "Without early renewal, draw down ADFz during the 2028–2030 contract term."}
+  ]
+}

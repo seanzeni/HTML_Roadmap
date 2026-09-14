@@ -1,0 +1,9 @@
+{
+  "$schema": "../../schemas/lane.schema.json",
+  "id": "pgba", "label": "PGBA", "rows": 2,
+  "entries": [
+    {"id": "pgba-aps", "start": 2026, "end": 2030, "label": "APS Conversion", "category": "customer", "row": 1, "detail": "PGBA APS conversion completes by the end of 2029."},
+    {"id": "pgba-ibm", "start": 2029, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm"}, "detail": "PGBA begins moving production-ready code to the IBM solution in 2029."},
+    {"id": "pgba-rocket", "start": 2030, "end": 2032, "label": "Rocket Migration", "category": "migration", "row": 2, "when": {"solution": "rocket"}, "detail": "PGBA begins moving production-ready code to Rocket ChangeMan in 2030."}
+  ]
+}

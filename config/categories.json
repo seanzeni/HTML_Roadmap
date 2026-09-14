@@ -1,0 +1,11 @@
+{
+  "$schema": "../schemas/categories.schema.json",
+  "categories": [
+    {"id": "program", "label": "Program"},
+    {"id": "contract", "label": "Contract"},
+    {"id": "recovery", "label": "Recovery"},
+    {"id": "migration", "label": "Migration"},
+    {"id": "customer", "label": "Customer Work"},
+    {"id": "decision", "label": "Decision Point"}
+  ]
+}

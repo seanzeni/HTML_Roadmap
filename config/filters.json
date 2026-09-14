@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/filters.schema.json",
+  "filters": [
+    {
+      "id": "contract",
+      "label": "Contract Path",
+      "default": "early",
+      "options": [
+        {"value": "early", "label": "Early renewal: 2027–2029"},
+        {"value": "standard", "label": "Current term, then 2028–2030"}
+      ]
+    },
+    {
+      "id": "solution",
+      "label": "Selected SDLC Solution",
+      "default": "ibm",
+      "options": [
+        {"value": "ibm", "label": "IBM suite viable"},
+        {"value": "rocket", "label": "Rocket ChangeMan selected"}
+      ]
+    }
+  ]
+}

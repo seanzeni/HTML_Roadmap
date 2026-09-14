@@ -1,0 +1,25 @@
+{
+  "$schema": "../schemas/settings.schema.json",
+  "title": "Mainframe SDLC Modernization Roadmap",
+  "subtitle": "Contract, implementation, recovery readiness, and customer migration",
+  "start_year": 2026,
+  "end_year": 2031,
+  "rows_per_swim_lane": 3,
+  "lanes_directory": "lanes",
+  "lane_order": ["contracts", "itso", "ibm", "rocket", "commercial", "pgba"],
+  "color_scheme": "executive",
+  "color_schemes": {
+    "executive": {
+      "ui": {"background": "#f7f8fa", "foreground": "#172033", "muted": "#667085", "line": "#d0d5dd", "panel": "#ffffff", "sub_lane": "#eef2f6", "bar_text": "#ffffff"},
+      "category_palette": ["#2563eb", "#7c3aed", "#0f766e", "#c2410c", "#475467", "#dc2626", "#0891b2", "#be185d", "#4d7c0f", "#a16207"]
+    },
+    "ocean": {
+      "ui": {"background": "#f4f9fb", "foreground": "#123047", "muted": "#526d7a", "line": "#b9ccd5", "panel": "#ffffff", "sub_lane": "#e5f1f5", "bar_text": "#ffffff"},
+      "category_palette": ["#0369a1", "#4338ca", "#047857", "#c2410c", "#475569", "#b42318", "#0e7490", "#9d174d", "#3f6212", "#92400e"]
+    },
+    "high-contrast": {
+      "ui": {"background": "#ffffff", "foreground": "#000000", "muted": "#3f3f46", "line": "#52525b", "panel": "#ffffff", "sub_lane": "#e4e4e7", "bar_text": "#ffffff"},
+      "category_palette": ["#0047ab", "#5b21b6", "#006b4f", "#a83b00", "#374151", "#b91c1c", "#075985", "#9f1239", "#3f6212", "#854d0e"]
+    }
+  }
+}

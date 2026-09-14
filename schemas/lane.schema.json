@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lane.schema.json", "title": "Roadmap Swim Lane", "type": "object",
+  "required": ["id", "label", "entries"], "additionalProperties": false,
+  "properties": {
+    "$schema": {"type": "string"}, "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"}, "label": {"type": "string", "minLength": 1},
+    "rows": {"type": "integer", "minimum": 1}, "sub_lane": {"type": "boolean"},
+    "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}
+  },
+  "$defs": {
+    "entry": {
+      "type": "object", "required": ["id", "label", "category", "row", "detail"], "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"}, "label": {"type": "string", "minLength": 1}, "category": {"type": "string"},
+        "row": {"type": "integer", "minimum": 1}, "detail": {"type": "string"}, "start": {"type": "number"}, "end": {"type": "number"}, "point": {"type": "number"},
+        "when": {"type": "object", "additionalProperties": {"type": "string"}}
+      },
+      "oneOf": [
+        {"required": ["start", "end"], "not": {"required": ["point"]}},
+        {"required": ["point"], "not": {"anyOf": [{"required": ["start"]}, {"required": ["end"]}]}}
+      ]
+    }
+  }
+}

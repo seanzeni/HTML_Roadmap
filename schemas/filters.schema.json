@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filters.schema.json",
+  "title": "Roadmap Filters",
+  "type": "object", "required": ["filters"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "filters": {"type": "array", "items": {"type": "object", "required": ["id", "label", "default", "options"], "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"}, "label": {"type": "string", "minLength": 1}, "default": {"type": "string"},
+        "options": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["value", "label"], "additionalProperties": false,
+          "properties": {"value": {"type": "string", "minLength": 1}, "label": {"type": "string", "minLength": 1}}}
+      }}
+  }, "additionalProperties": false
+}
