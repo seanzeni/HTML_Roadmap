@@ -20,6 +20,22 @@
     "high-contrast": {
       "ui": {"background": "#ffffff", "foreground": "#000000", "muted": "#3f3f46", "line": "#52525b", "panel": "#ffffff", "sub_lane": "#e4e4e7", "bar_text": "#ffffff"},
       "category_palette": ["#0047ab", "#5b21b6", "#006b4f", "#a83b00", "#374151", "#b91c1c", "#075985", "#9f1239", "#3f6212", "#854d0e"]
+    },
+    "dark": {
+      "ui": {"background": "#0f172a", "foreground": "#f8fafc", "muted": "#cbd5e1", "line": "#475569", "panel": "#1e293b", "sub_lane": "#273449", "bar_text": "#ffffff"},
+      "category_palette": ["#1d4ed8", "#6d28d9", "#047857", "#c2410c", "#475569", "#b91c1c", "#0e7490", "#9d174d", "#4d7c0f", "#a16207"]
+    },
+    "colorblind-friendly": {
+      "ui": {"background": "#fafafa", "foreground": "#111827", "muted": "#4b5563", "line": "#9ca3af", "panel": "#ffffff", "sub_lane": "#f0f2f5", "bar_text": "#ffffff"},
+      "category_palette": ["#0072b2", "#d55e00", "#007f5f", "#9b2c7f", "#4b5563", "#b91c1c", "#0369a1", "#6d28d9", "#0f766e", "#92400e"]
+    },
+    "warm": {
+      "ui": {"background": "#fffaf3", "foreground": "#3f271d", "muted": "#795548", "line": "#d8c3b5", "panel": "#fffdf9", "sub_lane": "#f7eadf", "bar_text": "#ffffff"},
+      "category_palette": ["#9a3412", "#7c2d12", "#a16207", "#b91c1c", "#57534e", "#be123c", "#92400e", "#9f1239", "#4d7c0f", "#78350f"]
+    },
+    "earth": {
+      "ui": {"background": "#f7f7f0", "foreground": "#26332b", "muted": "#5f6f63", "line": "#b8c0b4", "panel": "#fcfcf7", "sub_lane": "#e8ede3", "bar_text": "#ffffff"},
+      "category_palette": ["#3f6212", "#713f12", "#0f766e", "#9a3412", "#4b5563", "#991b1b", "#155e75", "#7e22ce", "#365314", "#854d0e"]
     }
   }
 }
