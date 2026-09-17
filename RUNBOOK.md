@@ -106,7 +106,15 @@ To change themes, set:
 "color_scheme": "ocean"
 ```
 
-The included choices are `executive`, `ocean`, and `high-contrast`.
+The included choices are:
+
+- `executive`: Balanced professional colors on a light background.
+- `ocean`: Blue, teal, and cool-toned colors.
+- `high-contrast`: Strong separation for projectors and printed copies.
+- `dark`: Dark background with light text and saturated bars.
+- `colorblind-friendly`: A palette designed to reduce dependence on red-versus-green differences.
+- `warm`: Reds, oranges, browns, and warm neutrals.
+- `earth`: Greens, browns, teal, and natural neutrals.
 
 Each color scheme has a `category_palette` containing up to 10 colors. Colors should use standard CSS values such as `#2563eb`.
 
