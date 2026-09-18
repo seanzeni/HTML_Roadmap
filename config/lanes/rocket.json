@@ -1,9 +1,11 @@
 {
   "$schema": "../../schemas/lane.schema.json",
-  "id": "rocket", "label": "Rocket ChangeMan", "sub_lane": true, "rows": 2,
+  "id": "rocket",
+  "label": "Rocket ChangeMan",
+  "sub_lane": true,
+  "rows": 2,
   "entries": [
-    {"id": "changeman-setup", "start": 2029, "end": 2030, "label": "ChangeMan Setup", "category": "program", "row": 1, "when": {"solution": "rocket"}, "detail": "Begin ChangeMan development and setup in 2029."},
-    {"id": "rocket-recovery", "start": 2029.45, "end": 2030, "label": "Recovery Testing", "category": "recovery", "row": 2, "when": {"solution": "rocket"}, "detail": "Conduct ChangeMan recovery tests in 2029."},
-    {"id": "rocket-migration", "start": 2030, "end": 2032, "label": "Rocket Migration", "category": "migration", "row": 1, "when": {"solution": "rocket"}, "detail": "Customers begin moving code to ChangeMan in 2030."}
+    {"id": "changeman-setup", "start": 2030, "end": 2031, "label": "ChangeMan Setup", "category": "program", "row": 1, "when": {"solution": "rocket"}, "detail": "Begin ChangeMan development and setup in 2029."},
+    {"id": "recovery-testing", "start": 2031, "end": 2032, "label": "Recovery testing", "category": "recovery", "row": 2, "when": {"solution": "rocket"}, "detail": "Conduct ChangeMan recovery tests in 2029."}
   ]
 }

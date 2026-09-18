@@ -1,10 +1,14 @@
 {
   "$schema": "../../schemas/lane.schema.json",
-  "id": "contracts", "label": "Contracts", "rows": 3,
+  "id": "contracts",
+  "label": "Contracts",
+  "rows": 3,
   "entries": [
     {"id": "current-oio", "start": 2026, "end": 2028, "label": "Current IBM OIO", "category": "contract", "row": 1, "detail": "Current IBM OIO term ends 01/01/2028."},
-    {"id": "early-renewal", "start": 2027, "end": 2030, "label": "Early Renewal", "category": "contract", "row": 2, "when": {"contract": "early"}, "detail": "Incentivized renewal runs 01/01/2027–12/31/2029."},
-    {"id": "standard-renewal", "start": 2028, "end": 2031, "label": "Standard Renewal", "category": "contract", "row": 2, "when": {"contract": "standard"}, "detail": "If early incentives are not compelling, renew for 2028–2030."},
-    {"id": "next-contract", "start": 2030, "end": 2034, "label": "Next Contract", "category": "contract", "row": 3, "when": {"contract": "early"}, "detail": "The early-renewal path requires another contract covering 2030–2033."}
+    {"id": "early-renewal", "start": 2027, "end": 2030, "label": "Early renewal", "category": "contract", "row": 2, "when": {"contract": "early"}, "detail": "Incentivized renewal runs 01/01/2027–12/31/2029."},
+    {"id": "standard-renewal-2028", "start": 2028, "end": 2031, "label": "Standard renewal", "category": "contract", "row": 1, "when": {"contract": "standard"}, "detail": "If early incentives are not compelling, renew for 2028–2030."},
+    {"id": "standard-renewal-2031", "start": 2031, "end": 2034, "label": "Standard renewal", "category": "contract", "row": 1, "when": {"contract": "standard"}, "detail": "The next 3 year contract 2031-2034."},
+    {"id": "next-contract", "start": 2030, "end": 2033, "label": "Next Contract", "category": "contract", "row": 3, "when": {"contract": "early"}, "detail": "The early-renewal path requires another contract covering 2030–2033."},
+    {"id": "broadcom-dissolution", "point": 2032, "label": "Broadcom Dissolution", "category": "decision", "row": 1, "detail": "End of our current Broadcom contract, need to be fully off products to meet strategy."}
   ]
 }

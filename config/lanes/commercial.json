@@ -1,9 +1,16 @@
 {
   "$schema": "../../schemas/lane.schema.json",
-  "id": "commercial", "label": "Commercial", "rows": 2,
+  "id": "commercial",
+  "label": "Commercial",
+  "rows": 3,
   "entries": [
-    {"id": "commercial-aps", "start": 2026, "end": 2030, "label": "APS Conversion", "category": "customer", "row": 1, "detail": "Commercial APS conversion completes by the end of 2029."},
-    {"id": "commercial-ibm", "start": 2029, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm"}, "detail": "Commercial begins moving production-ready code to the IBM solution in 2029."},
-    {"id": "commercial-rocket", "start": 2030, "end": 2032, "label": "Rocket Migration", "category": "migration", "row": 2, "when": {"solution": "rocket"}, "detail": "Commercial begins moving production-ready code to Rocket ChangeMan in 2030."}
+    {"id": "commercial-aps-conversion", "start": 2026, "end": 2030, "label": "APS conversion", "category": "customer", "row": 1, "detail": "Commercial APS mostly converted by end of 2029."},
+    {"id": "commercial-end-aps-development", "start": 2028, "end": 2029, "label": "End APS Development", "category": "customer", "row": 2, "detail": "Garnering approval to stop all future APS development and force all future to COBOL."},
+    {"id": "commercial-ibm-migration-early", "start": 2030, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm", "contract": "early"}, "detail": "Commercial begins moving production-ready code to the IBM solution in 2029."},
+    {"id": "commercial-ibm-migration-standard", "start": 2031, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm", "contract": "standard"}, "detail": "Commercial begins moving production-ready code to the IBM solution in 2029."},
+    {"id": "commercial-rocket-migration", "start": 2031, "end": 2032, "label": "Rocket Migration", "category": "migration", "row": 2, "when": {"solution": "rocket"}, "detail": "Commercial begins moving production-ready code to Rocket ChangeMan in 2030."},
+    {"id": "commercial-lm-rset-redesign-early", "start": 2029, "end": 2031, "label": "LM/RSET Redesign", "category": "migration", "row": 3, "when": {"solution": "ibm", "contract": "early"}, "detail": "With the vast changes, we'll need to plan the redesign of what Release Services & LM does today."},
+    {"id": "commercial-lm-rset-redesign-standard", "start": 2029, "end": 2031, "label": "LM/RSET Redesign", "category": "migration", "row": 3, "when": {"solution": "ibm", "contract": "standard"}, "detail": "With the vast changes, we'll need to plan the redesign of what Release Services & LM does today."},
+    {"id": "commercial-lm-rset-redesign-rocket", "start": 2030, "end": 2032, "label": "LM/RSET Redesign", "category": "migration", "row": 3, "when": {"solution": "rocket"}, "detail": "With the vast changes, we'll need to plan the redesign of what Release Services & LM does today."}
   ]
 }

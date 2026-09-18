@@ -1,9 +1,14 @@
 {
   "$schema": "../../schemas/lane.schema.json",
-  "id": "pgba", "label": "PGBA", "rows": 2,
+  "id": "pgba",
+  "label": "PGBA",
+  "rows": 3,
   "entries": [
-    {"id": "pgba-aps", "start": 2026, "end": 2030, "label": "APS Conversion", "category": "customer", "row": 1, "detail": "PGBA APS conversion completes by the end of 2029."},
-    {"id": "pgba-ibm", "start": 2029, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm"}, "detail": "PGBA begins moving production-ready code to the IBM solution in 2029."},
-    {"id": "pgba-rocket", "start": 2030, "end": 2032, "label": "Rocket Migration", "category": "migration", "row": 2, "when": {"solution": "rocket"}, "detail": "PGBA begins moving production-ready code to Rocket ChangeMan in 2030."}
+    {"id": "pgba-aps-conversion", "start": 2026, "end": 2030, "label": "APS conversion", "category": "customer", "row": 1, "detail": "PGBA APS conversion completes by the end of 2029. Currently at 25% with a slow roll for 2027, with picking back up in 2028."},
+    {"id": "pgba-ibm-migration-early", "start": 2030, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm", "contract": "early"}, "detail": "PGBA begins moving production-ready code to the IBM solution in 2029."},
+    {"id": "pgba-ibm-migration-standard", "start": 2031, "end": 2032, "label": "IBM Migration", "category": "migration", "row": 2, "when": {"solution": "ibm", "contract": "standard"}, "detail": "PGBA begins moving production-ready code to the IBM solution in 2029."},
+    {"id": "pgba-smart-redesign-ibm", "start": 2029, "end": 2031, "label": "SMART Redesign", "category": "migration", "row": 3, "when": {"solution": "ibm"}, "detail": "With the vast changes, we'll need to plan the redesign of what SMART does today."},
+    {"id": "pgba-smart-redesign-rocket", "start": 2030, "end": 2032, "label": "SMART Redesign", "category": "migration", "row": 3, "when": {"solution": "rocket"}, "detail": "With the vast changes, we'll need to plan the redesign of what SMART does today."},
+    {"id": "pgba-rocket-migration", "start": 2031, "end": 2032, "label": "Rocket Migration", "category": "migration", "row": 2, "when": {"solution": "rocket"}, "detail": "PGBA begins moving production-ready code to Rocket ChangeMan in 2030."}
   ]
 }

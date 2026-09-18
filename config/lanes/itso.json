@@ -1,8 +1,10 @@
 {
   "$schema": "../../schemas/lane.schema.json",
-  "id": "itso", "label": "ITSO", "rows": 2,
+  "id": "itso",
+  "label": "ITSO",
+  "rows": 1,
   "entries": [
     {"id": "tool-discovery", "start": 2026, "end": 2027, "label": "Tool Discovery", "category": "program", "row": 1, "detail": "Tool discovery and IBM and Rocket proofs of concept conclude in 2026."},
-    {"id": "solution-decision", "point": 2026.92, "label": "Solution Decision", "category": "decision", "row": 2, "detail": "Determine whether the IBM suite is viable; otherwise proceed with Rocket ChangeMan."}
+    {"id": "solution-decision", "point": 2027, "label": "Solution Decision", "category": "decision", "row": 1, "detail": "Determine whether the IBM suite is viable; otherwise proceed with Rocket ChangeMan."}
   ]
 }

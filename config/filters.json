@@ -3,7 +3,7 @@
   "filters": [
     {
       "id": "contract",
-      "label": "Contract Path",
+      "label": "Contract path",
       "default": "early",
       "options": [
         {"value": "early", "label": "Early renewal: 2027–2029"},
@@ -12,11 +12,11 @@
     },
     {
       "id": "solution",
-      "label": "Selected SDLC Solution",
+      "label": "Selected SDLC solution",
       "default": "ibm",
       "options": [
-        {"value": "ibm", "label": "IBM suite viable"},
-        {"value": "rocket", "label": "Rocket ChangeMan selected"}
+        {"value": "ibm", "label": "IBM DBB Suite"},
+        {"value": "rocket", "label": "Rocket ChangeMan"}
       ]
     }
   ]
