@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/settings.schema.json",
+  "title": "Mainframe Software Portfolio Roadmap — Example",
+  "subtitle": "Cross-workstream overlap across upgrades, migrations, resiliency, and team adoption",
+  "start_year": 2026,
+  "end_year": 2030,
+  "rows_per_swim_lane": 4,
+  "lanes_directory": "lanes",
+  "lane_order": ["platform", "middleware", "data", "delivery-tools", "resiliency", "team-adoption"],
+  "color_scheme": "executive",
+  "color_schemes": {
+    "executive": {
+      "ui": {"background": "#f7f8fa", "foreground": "#172033", "muted": "#667085", "line": "#d0d5dd", "panel": "#ffffff", "sub_lane": "#eef2f6", "bar_text": "#ffffff"},
+      "category_palette": ["#64748b", "#2563eb", "#7c3aed", "#0f766e", "#c2410c", "#dc2626"]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "delivery-tools",
+  "label": "Development & Delivery Tools",
+  "rows": 4,
+  "entries": [
+    {"id": "endevor-upgrade", "start": 2026, "end": 2027, "label": "Required Endevor upgrade", "category": "normal_ops", "row": 1, "when": {"strategy": "broadcom", "work_type": "upgrade", "sysprog": "morgan", "ingest_team": "appdev"}, "detail": "Keep the existing product supported while the replacement platform is being prepared."},
+    {"id": "ibm-tool-build", "start": 2026.75, "end": 2028.25, "label": "Install + configure IBM replacement", "category": "install", "row": 2, "when": {"strategy": "broadcom", "work_type": "migration", "sysprog": "morgan", "ingest_team": "appdev"}, "detail": "System Programming installs, secures, integrates, and validates the target delivery platform."},
+    {"id": "delivery-migration", "start": 2027.75, "end": 2030.5, "label": "Pipeline migration · 35%", "category": "migration", "row": 3, "when": {"strategy": "broadcom", "work_type": "migration", "sysprog": "morgan", "ingest_team": "appdev"}, "detail": "Application pipelines and operational processes move to the IBM replacement. Progress: 35%."},
+    {"id": "delivery-retire", "point": 2030.5, "label": "Legacy tool exit gate", "category": "decision", "row": 4, "when": {"strategy": "broadcom", "work_type": "migration", "sysprog": "morgan", "ingest_team": "appdev"}, "detail": "Decision gate for retiring the prior delivery utility before contract end."}
+  ]
+}

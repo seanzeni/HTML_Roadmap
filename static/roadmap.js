@@ -56,7 +56,7 @@
   }
 
   function visible(entry) {
-    return !entry.when || Object.entries(entry.when).every(([key, value]) => state[key] === value);
+    return !entry.when || Object.entries(entry.when).every(([key, value]) => state[key] === "all" || state[key] === value);
   }
 
   function wrappedLines(label, width) {

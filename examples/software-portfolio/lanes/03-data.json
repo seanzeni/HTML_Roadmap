@@ -1,0 +1,10 @@
+{
+  "id": "data",
+  "label": "Data Platforms",
+  "rows": 4,
+  "entries": [
+    {"id": "datastage-upgrade", "start": 2026.5, "end": 2027.5, "label": "DataStage supported-version upgrade", "category": "normal_ops", "row": 1, "when": {"strategy": "data", "work_type": "upgrade", "sysprog": "jordan", "ingest_team": "dataops"}, "detail": "Normal version upgrade required while longer-term data modernization is planned."},
+    {"id": "data-tool-migration", "start": 2027.25, "end": 2029.75, "label": "Data utility migration · 20%", "category": "migration", "row": 2, "when": {"strategy": "data", "work_type": "migration", "sysprog": "jordan", "ingest_team": "dataops"}, "detail": "Illustrative migration from a current data utility to its target platform. Progress: 20%."},
+    {"id": "metadata-joint", "start": 2028, "end": 2030.25, "label": "Shared metadata platform · 10%", "category": "migration", "row": 3, "when": {"strategy": "joint", "work_type": "migration", "sysprog": "jordan", "ingest_team": "appdev"}, "detail": "Joint Broadcom and Data dependency. The work overlaps delivery-tool migration and application adoption. Progress: 10%."}
+  ]
+}

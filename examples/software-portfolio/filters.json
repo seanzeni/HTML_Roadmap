@@ -1,0 +1,53 @@
+{
+  "$schema": "../../schemas/filters.schema.json",
+  "filters": [
+    {
+      "id": "strategy",
+      "label": "Strategy",
+      "default": "all",
+      "options": [
+        {"value": "all", "label": "All strategies"},
+        {"value": "normal", "label": "Normal operations"},
+        {"value": "broadcom", "label": "Broadcom"},
+        {"value": "data", "label": "Data"},
+        {"value": "joint", "label": "Broadcom + Data"},
+        {"value": "resiliency", "label": "Resiliency"}
+      ]
+    },
+    {
+      "id": "work_type",
+      "label": "Work type",
+      "default": "all",
+      "options": [
+        {"value": "all", "label": "All work"},
+        {"value": "upgrade", "label": "Upgrade / maintenance"},
+        {"value": "migration", "label": "Tool migration"},
+        {"value": "adoption", "label": "Team adoption"},
+        {"value": "exercise", "label": "Test / exercise"}
+      ]
+    },
+    {
+      "id": "sysprog",
+      "label": "System programmer",
+      "default": "all",
+      "options": [
+        {"value": "all", "label": "All system programmers"},
+        {"value": "alex", "label": "Alex — platform"},
+        {"value": "jordan", "label": "Jordan — middleware / data"},
+        {"value": "morgan", "label": "Morgan — tools / resiliency"}
+      ]
+    },
+    {
+      "id": "ingest_team",
+      "label": "Ingesting team",
+      "default": "all",
+      "options": [
+        {"value": "all", "label": "All ingesting teams"},
+        {"value": "appdev", "label": "Application Development"},
+        {"value": "dataops", "label": "Data Operations"},
+        {"value": "operations", "label": "Enterprise Operations"},
+        {"value": "platform", "label": "Platform Engineering"}
+      ]
+    }
+  ]
+}

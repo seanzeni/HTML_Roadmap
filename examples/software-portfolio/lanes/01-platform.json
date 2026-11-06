@@ -1,0 +1,10 @@
+{
+  "id": "platform",
+  "label": "Enterprise Platform",
+  "rows": 4,
+  "entries": [
+    {"id": "zos-upgrade", "start": 2026.25, "end": 2027.75, "label": "z/OS upgrade", "category": "normal_ops", "row": 1, "when": {"strategy": "normal", "work_type": "upgrade", "sysprog": "alex", "ingest_team": "platform"}, "detail": "Illustrative foundation upgrade. Owner: Alex. Ingesting team: Platform Engineering. Downstream testing affects CICS, MQ, Java, and delivery tools."},
+    {"id": "java-upgrade", "start": 2027, "end": 2028.25, "label": "Enterprise Java upgrade", "category": "normal_ops", "row": 2, "when": {"strategy": "normal", "work_type": "upgrade", "sysprog": "alex", "ingest_team": "appdev"}, "detail": "Java runtime uplift with application certification. Overlaps the latter portion of the z/OS upgrade and middleware testing."},
+    {"id": "platform-maintenance", "start": 2028.5, "end": 2029.25, "label": "Platform maintenance cycle", "category": "normal_ops", "row": 3, "when": {"strategy": "normal", "work_type": "upgrade", "sysprog": "alex", "ingest_team": "platform"}, "detail": "Normal maintenance that consumes capacity during tool migration and resilience work."}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "../../schemas/categories.schema.json",
+  "categories": [
+    {"id": "normal_ops", "label": "Normal operations"},
+    {"id": "install", "label": "Install / configure"},
+    {"id": "ingestion", "label": "Team ingestion"},
+    {"id": "migration", "label": "Migration / conversion"},
+    {"id": "impact", "label": "Operational impact"},
+    {"id": "decision", "label": "Decision / exit gate"}
+  ]
+}

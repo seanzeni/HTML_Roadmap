@@ -1,0 +1,11 @@
+{
+  "id": "team-adoption",
+  "label": "Application & Operations Adoption",
+  "rows": 4,
+  "entries": [
+    {"id": "java-certification", "start": 2027.5, "end": 2028.5, "label": "Application Java certification", "category": "ingestion", "row": 1, "when": {"strategy": "normal", "work_type": "adoption", "sysprog": "alex", "ingest_team": "appdev"}, "detail": "Application teams test and certify workloads on the new Java runtime."},
+    {"id": "cics-app-testing", "start": 2027.75, "end": 2028.75, "label": "CICS application testing", "category": "ingestion", "row": 2, "when": {"strategy": "normal", "work_type": "adoption", "sysprog": "jordan", "ingest_team": "appdev"}, "detail": "Application testing overlaps Java certification and delivery-tool onboarding."},
+    {"id": "delivery-adoption", "start": 2028.25, "end": 2030.5, "label": "Delivery platform adoption · 35%", "category": "ingestion", "row": 3, "when": {"strategy": "broadcom", "work_type": "adoption", "sysprog": "morgan", "ingest_team": "appdev"}, "detail": "Application Development adopts the replacement delivery platform. Progress: 35%."},
+    {"id": "ops-adoption", "start": 2028.75, "end": 2030, "label": "Operations adoption · 45%", "category": "ingestion", "row": 4, "when": {"strategy": "resiliency", "work_type": "adoption", "sysprog": "morgan", "ingest_team": "operations"}, "detail": "Operations adopts recovery automation, monitoring, procedures, and support ownership. Progress: 45%."}
+  ]
+}

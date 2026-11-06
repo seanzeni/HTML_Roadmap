@@ -22,6 +22,13 @@ def _scenario_combinations(data: dict):
     if not groups:
         yield {}, "All entries"
         return
+    # Portfolio filters use an explicit "all" wildcard. Printing every possible
+    # facet combination creates hundreds of repetitive pages, so emit one useful
+    # all-work overview. Scenario roadmaps without wildcard options retain the
+    # original one-page-set-per-decision-path behavior.
+    if all(any(option["value"] == "all" for option in group["options"]) for group in groups):
+        yield {group["id"]: "all" for group in groups}, "All workstreams and owners"
+        return
     for options in product(*(group["options"] for group in groups)):
         state = {group["id"]: option["value"] for group, option in zip(groups, options)}
         label = " | ".join(f"{_ascii_text(group['label'])}: {_ascii_text(option['label'])}" for group, option in zip(groups, options))
@@ -29,7 +36,7 @@ def _scenario_combinations(data: dict):
 
 
 def _active(entry: dict, state: dict) -> bool:
-    return all(state.get(key) == value for key, value in entry.get("when", {}).items())
+    return all(state.get(key) == "all" or state.get(key) == value for key, value in entry.get("when", {}).items())
 
 
 def _shorten(text: str, max_width: float, font: str, size: float) -> str:

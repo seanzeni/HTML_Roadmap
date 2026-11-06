@@ -1,0 +1,10 @@
+{
+  "id": "middleware",
+  "label": "Middleware — CICS / MQ",
+  "rows": 4,
+  "entries": [
+    {"id": "cics-upgrade", "start": 2027, "end": 2028.5, "label": "CICS TS upgrade", "category": "normal_ops", "row": 1, "when": {"strategy": "normal", "work_type": "upgrade", "sysprog": "jordan", "ingest_team": "appdev"}, "detail": "CICS upgrade and application certification. Shares testing windows with Java and the delivery-tool migration."},
+    {"id": "mq-upgrade", "start": 2027.75, "end": 2029, "label": "MQ upgrade", "category": "normal_ops", "row": 2, "when": {"strategy": "normal", "work_type": "upgrade", "sysprog": "jordan", "ingest_team": "operations"}, "detail": "MQ infrastructure upgrade. Illustrates a second middleware effort overlapping CICS, Java, and resiliency changes."},
+    {"id": "middleware-freeze", "point": 2028.75, "label": "Integration freeze", "category": "impact", "row": 3, "when": {"strategy": "normal", "work_type": "upgrade", "sysprog": "jordan", "ingest_team": "operations"}, "detail": "Example restricted-change window during combined CICS and MQ cutover activity."}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "resiliency",
+  "label": "Resiliency & Recovery",
+  "rows": 4,
+  "entries": [
+    {"id": "recovery-update", "start": 2027, "end": 2028, "label": "Recovery tooling update", "category": "normal_ops", "row": 1, "when": {"strategy": "resiliency", "work_type": "upgrade", "sysprog": "morgan", "ingest_team": "operations"}, "detail": "Mandatory update to preserve support and recovery readiness."},
+    {"id": "automation-migration", "start": 2028, "end": 2029.75, "label": "Recovery automation migration · 45%", "category": "migration", "row": 2, "when": {"strategy": "resiliency", "work_type": "migration", "sysprog": "morgan", "ingest_team": "operations"}, "detail": "Migration and configuration of recovery automation. Progress: 45%."},
+    {"id": "dr-exercise", "start": 2029.25, "end": 2030, "label": "Enterprise recovery exercise", "category": "decision", "row": 3, "when": {"strategy": "resiliency", "work_type": "exercise", "sysprog": "morgan", "ingest_team": "operations"}, "detail": "Formal exercise validating the new automation while other migrations are still active."}
+  ]
+}
