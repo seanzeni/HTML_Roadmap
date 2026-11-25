@@ -112,6 +112,7 @@ def validate(configuration: dict) -> dict:
 
     lane_by_id: dict[str, dict] = {}
     entry_ids: set[str] = set()
+    entry_by_id: dict[str, dict] = {}
     for lane in lanes:
         source = lane.pop("_source")
         try:
@@ -135,6 +136,7 @@ def validate(configuration: dict) -> dict:
                 if entry_id in entry_ids:
                     errors.append(f"{prefix}: duplicate entry id '{entry_id}'")
                 entry_ids.add(entry_id)
+                entry_by_id[entry_id] = entry
             except ValueError as exc:
                 errors.append(str(exc))
             row = entry.get("row", 1)
@@ -151,6 +153,43 @@ def validate(configuration: dict) -> dict:
                     errors.append(f"{prefix}: unknown filter criterion '{filter_id}'")
                 elif value not in filter_values[filter_id]:
                     errors.append(f"{prefix}: invalid value '{value}' for filter '{filter_id}'")
+
+    for entry_id, entry in entry_by_id.items():
+        predecessors = entry.get("predecessors", [])
+        if not isinstance(predecessors, list) or any(not isinstance(value, str) for value in predecessors):
+            errors.append(f"entry '{entry_id}': predecessors must be a list of entry IDs")
+            continue
+        if len(predecessors) != len(set(predecessors)):
+            errors.append(f"entry '{entry_id}': predecessors contains duplicates")
+        for predecessor_id in predecessors:
+            if predecessor_id == entry_id:
+                errors.append(f"entry '{entry_id}': cannot depend on itself")
+            elif predecessor_id not in entry_ids:
+                errors.append(f"entry '{entry_id}': unknown predecessor '{predecessor_id}'")
+
+    dependency_graph = {
+        entry_id: [value for value in entry.get("predecessors", []) if value in entry_by_id]
+        for entry_id, entry in entry_by_id.items()
+        if isinstance(entry.get("predecessors", []), list)
+    }
+    visiting: set[str] = set()
+    visited: set[str] = set()
+
+    def visit_dependency(entry_id: str, trail: list[str]) -> None:
+        if entry_id in visiting:
+            cycle_start = trail.index(entry_id)
+            errors.append("dependency cycle: " + " -> ".join(trail[cycle_start:] + [entry_id]))
+            return
+        if entry_id in visited:
+            return
+        visiting.add(entry_id)
+        for predecessor_id in dependency_graph.get(entry_id, []):
+            visit_dependency(predecessor_id, trail + [predecessor_id])
+        visiting.remove(entry_id)
+        visited.add(entry_id)
+
+    for entry_id in dependency_graph:
+        visit_dependency(entry_id, [entry_id])
 
     lane_order = settings.get("lane_order", [])
     unknown_order = set(lane_order) - set(lane_by_id)
@@ -171,6 +210,7 @@ def validate(configuration: dict) -> dict:
         for entry in lane.get("entries", []):
             entries.append(entry | {"lane": lane["id"], "row": entry.get("row", 1) - 1})
     warnings = find_overlap_warnings(entries, ordered_lanes)
+    warnings.extend(find_dependency_warnings(entries))
     selected_theme = schemes[selected_scheme]
     category_colors = {
         category["id"]: selected_theme["category_palette"][index]
@@ -216,6 +256,25 @@ def find_overlap_warnings(entries: list[dict], lanes: list[dict]) -> list[str]:
                     f"Overlap in {lane_labels[first['lane']]} row {first['row'] + 1}: "
                     f"'{first['id']}' and '{second['id']}' can be active at the same time"
                 )
+    return warnings
+
+
+def find_dependency_warnings(entries: list[dict]) -> list[str]:
+    """Flag dependencies whose predecessor is scheduled to finish after dependent work begins."""
+    entry_by_id = {entry["id"]: entry for entry in entries}
+    warnings: list[str] = []
+    for entry in entries:
+        entry_start = entry.get("point", entry.get("start"))
+        for predecessor_id in entry.get("predecessors", []):
+            predecessor = entry_by_id[predecessor_id]
+            predecessor_finish = predecessor.get("point", predecessor.get("end"))
+            if entry_start < predecessor_finish:
+                message = (
+                    f"Dependency conflict: '{entry['id']}' starts at {entry_start:g} before "
+                    f"predecessor '{predecessor_id}' finishes at {predecessor_finish:g}"
+                )
+                warnings.append(message)
+                entry.setdefault("dependency_warnings", []).append(message)
     return warnings
 
 

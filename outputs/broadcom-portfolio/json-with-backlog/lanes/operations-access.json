@@ -1,0 +1,109 @@
+{
+  "$schema": "../../../../schemas/lane.schema.json",
+  "id": "operations-access",
+  "label": "Operations Automation and Access",
+  "rows": 4,
+  "sub_lane": false,
+  "entries": [
+    {
+      "id": "ibm-z-netview-cont-avail-v6-install",
+      "label": "Install and configure IBM Z NetView Cont Avail V6 - 0%",
+      "category": "install",
+      "row": 1,
+      "detail": "One shared installation initiative for 1 legacy product record(s). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency; Zero Trust Architecture.",
+      "start": 2029,
+      "end": 2029.9166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-z-netview-cont-avail-v6-migration",
+      "label": "Migrate and stabilize on IBM Z NetView Cont Avail V6 - 0%",
+      "category": "migration",
+      "row": 2,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency; Zero Trust Architecture.",
+      "predecessors": [
+        "ibm-z-netview-cont-avail-v6-install"
+      ],
+      "start": 2029.9166666666667,
+      "end": 2030.4166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-cl-ss-for-zos-install",
+      "label": "Install and configure IBM CL/SS for z/OS - 0%",
+      "category": "install",
+      "row": 1,
+      "detail": "One shared installation initiative for 1 legacy product record(s). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency; Zero Trust Architecture.",
+      "start": 2027.1666666666667,
+      "end": 2027.5833333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-cl-ss-for-zos-migration",
+      "label": "Migrate and stabilize on IBM CL/SS for z/OS - 0%",
+      "category": "migration",
+      "row": 2,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency; Zero Trust Architecture.",
+      "predecessors": [
+        "ibm-cl-ss-for-zos-install"
+      ],
+      "start": 2027.5833333333333,
+      "end": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-operations-access-2030-06",
+      "label": "Retire 54%",
+      "category": "retirement",
+      "row": 1,
+      "detail": "Products retiring (1): OPS/MVS Event Management & Automation for JES2 Plus. Overall Broadcom completion: 54% (22 of 41 products). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency; Zero Trust Architecture.",
+      "predecessors": [
+        "ibm-z-netview-cont-avail-v6-migration"
+      ],
+      "point": 2030.4166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-operations-access-2028-01",
+      "label": "Retire 12%",
+      "category": "retirement",
+      "row": 1,
+      "detail": "Products retiring (1): TPX Session Management for z/OS. Overall Broadcom completion: 12% (5 of 41 products). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency; Zero Trust Architecture.",
+      "predecessors": [
+        "ibm-cl-ss-for-zos-migration"
+      ],
+      "point": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    }
+  ]
+}

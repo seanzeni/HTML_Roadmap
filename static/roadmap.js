@@ -5,6 +5,7 @@
   const detail = document.querySelector(".detail");
   const mobile = document.querySelector(".mobile");
   const legend = document.getElementById("legend");
+  const warningPanel = document.getElementById("roadmap-warnings");
   const ns = "http://www.w3.org/2000/svg";
   const state = {};
 
@@ -48,6 +49,25 @@
     controls.append(field);
   });
 
+  if (data.warnings.length) {
+    warningPanel.classList.add("is-visible");
+    const heading = document.createElement("strong");
+    heading.textContent = "Timeline review needed";
+    const list = document.createElement("ul");
+    data.warnings.forEach((warning) => {
+      const item = document.createElement("li");
+      item.textContent = warning;
+      list.append(item);
+    });
+    warningPanel.append(heading, list);
+  }
+
+  function entryDescription(entry) {
+    const predecessors = entry.predecessors?.length ? ` Predecessors: ${entry.predecessors.join(", ")}.` : "";
+    const dependencyWarnings = entry.dependency_warnings?.length ? ` WARNING: ${entry.dependency_warnings.join(" ")}` : "";
+    return `${entry.label} — ${entry.detail || ""}${predecessors}${dependencyWarnings}`;
+  }
+
   function node(name, attributes = {}, text = "") {
     const element = document.createElementNS(ns, name);
     Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
@@ -80,8 +100,8 @@
     const px = x(entry.point);
     const size = 7;
     const path = `M ${px} ${y} l ${size} ${size} l ${-size} ${size} l ${-size} ${-size} Z`;
-    const show = () => { detail.textContent = `${entry.label} — ${entry.detail || ""}`; };
-    svg.append(node("path", { d: path, class: "decision", opacity: active ? 1 : 0.14, style: `--category-color:${data.theme.categories[entry.category]}` }));
+    const show = () => { detail.textContent = entryDescription(entry); };
+    svg.append(node("path", { d: path, class: `decision${entry.dependency_warnings?.length ? " has-dependency-warning" : ""}`, opacity: active ? 1 : 0.14, style: `--category-color:${data.theme.categories[entry.category]}` }));
     if (active) {
       const text = node("text", { x: px + 12, y: y + 11, class: "bar-text decision-text" }, entry.label);
       text.addEventListener("click", show);
@@ -110,12 +130,12 @@
     const clip = node("clipPath", { id: clipId });
     clip.append(node("rect", { x: start + 3, y, width: Math.max(1, width - 6), height }));
     defs.append(clip);
-    const barAttributes = { x: start, y, width, height, rx: 3, class: `bar ${entry.category || "program"}${active ? "" : " is-inactive"}`, opacity: active ? 1 : 0.13 };
+    const barAttributes = { x: start, y, width, height, rx: 3, class: `bar ${entry.category || "program"}${active ? "" : " is-inactive"}${entry.dependency_warnings?.length ? " has-dependency-warning" : ""}`, opacity: active ? 1 : 0.13 };
     if (active) barAttributes["aria-label"] = `${entry.label}. ${entry.detail || ""}`;
     else barAttributes["aria-hidden"] = "true";
     barAttributes.fill = data.theme.categories[entry.category];
     const bar = node("rect", barAttributes);
-    if (active) bar.addEventListener("click", () => { detail.textContent = `${entry.label} — ${entry.detail || ""}`; });
+    if (active) bar.addEventListener("click", () => { detail.textContent = entryDescription(entry); });
     svg.append(bar);
     if (active && width > 34) {
       const text = node("text", { x: start + 6, y: y + 9, class: "bar-text", "clip-path": `url(#${clipId})` });

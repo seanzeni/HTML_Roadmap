@@ -1,0 +1,135 @@
+{
+  "$schema": "../../../schemas/filters.schema.json",
+  "filters": [
+    {
+      "id": "strategy",
+      "label": "Strategy",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "All strategies"
+        },
+        {
+          "value": "broadcom",
+          "label": "Broadcom"
+        }
+      ]
+    },
+    {
+      "id": "priority",
+      "label": "Strategic priority",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "All strategic priorities"
+        },
+        {
+          "value": "operating-model-governance",
+          "label": "I/S Operating Model and Governance"
+        },
+        {
+          "value": "ai-enablement",
+          "label": "AI Enablement (Operationalization)"
+        },
+        {
+          "value": "core-modernization",
+          "label": "Core Systems Modernization"
+        },
+        {
+          "value": "digital-modernization",
+          "label": "Digital Systems Modernization"
+        },
+        {
+          "value": "resiliency",
+          "label": "Resiliency"
+        },
+        {
+          "value": "zero-trust",
+          "label": "Zero Trust Architecture"
+        }
+      ]
+    },
+    {
+      "id": "work_type",
+      "label": "Work type",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "All work"
+        },
+        {
+          "value": "install",
+          "label": "Install / configure"
+        },
+        {
+          "value": "migration",
+          "label": "Migration / stabilization"
+        },
+        {
+          "value": "retirement",
+          "label": "Legacy retirement"
+        },
+        {
+          "value": "decision",
+          "label": "Decision point"
+        },
+        {
+          "value": "planning",
+          "label": "Not planned yet"
+        }
+      ]
+    },
+    {
+      "id": "sysprog",
+      "label": "System programmer",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "All system programmers"
+        },
+        {
+          "value": "unassigned",
+          "label": "Unassigned"
+        }
+      ]
+    },
+    {
+      "id": "ingest_team",
+      "label": "Ingesting team",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "All ingesting teams"
+        },
+        {
+          "value": "unassigned",
+          "label": "Unassigned"
+        }
+      ]
+    },
+    {
+      "id": "schedule",
+      "label": "Schedule status",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "All schedule statuses"
+        },
+        {
+          "value": "scheduled",
+          "label": "Scheduled"
+        },
+        {
+          "value": "unscheduled",
+          "label": "Unscheduled"
+        }
+      ]
+    }
+  ]
+}

@@ -13,6 +13,7 @@
       "properties": {
         "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"}, "label": {"type": "string", "minLength": 1}, "category": {"type": "string"},
         "row": {"type": "integer", "minimum": 1}, "detail": {"type": "string"}, "start": {"type": "number"}, "end": {"type": "number"}, "point": {"type": "number"},
+        "predecessors": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*$"}},
         "when": {"type": "object", "additionalProperties": {"type": "string"}}
       },
       "oneOf": [

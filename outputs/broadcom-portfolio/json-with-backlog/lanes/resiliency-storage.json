@@ -1,0 +1,193 @@
+{
+  "$schema": "../../../../schemas/lane.schema.json",
+  "id": "resiliency-storage",
+  "label": "Resiliency and Storage",
+  "rows": 5,
+  "sub_lane": false,
+  "entries": [
+    {
+      "id": "tiv-adv-reporting-dfsmshsm-install",
+      "label": "Install and configure Tiv Adv Reporting DFSMShsm - 0%",
+      "category": "install",
+      "row": 4,
+      "detail": "One shared installation initiative for 1 legacy product record(s). Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "start": 2028,
+      "end": 2028.9166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "tiv-adv-reporting-dfsmshsm-migration",
+      "label": "Migrate and stabilize on Tiv Adv Reporting DFSMShsm - 0%",
+      "category": "migration",
+      "row": 1,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "predecessors": [
+        "tiv-adv-reporting-dfsmshsm-install"
+      ],
+      "start": 2028.9166666666667,
+      "end": 2029.4166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "zos-dfsms-install",
+      "label": "Install and configure z/OS DFSMS - 0%",
+      "category": "install",
+      "row": 5,
+      "detail": "One shared installation initiative for 1 legacy product record(s). Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "start": 2028,
+      "end": 2028.9166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "zos-dfsms-migration",
+      "label": "Migrate and stabilize on z/OS DFSMS - 0%",
+      "category": "migration",
+      "row": 2,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "predecessors": [
+        "zos-dfsms-install"
+      ],
+      "start": 2028.9166666666667,
+      "end": 2029.4166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "tiv-tape-optimizer-zos-install",
+      "label": "Install and configure Tiv Tape Optimizer z/OS - 0%",
+      "category": "install",
+      "row": 1,
+      "detail": "One shared installation initiative for 1 legacy product record(s). Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "start": 2027.3333333333333,
+      "end": 2027.5833333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "tiv-tape-optimizer-zos-migration",
+      "label": "Migrate and stabilize on Tiv Tape Optimizer z/OS - 0%",
+      "category": "migration",
+      "row": 2,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "predecessors": [
+        "tiv-tape-optimizer-zos-install"
+      ],
+      "start": 2027.5833333333333,
+      "end": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "tiv-adv-allocation-mgmt-zos-install",
+      "label": "Install and configure Tiv Adv Allocation Mgmt z/OS - 0%",
+      "category": "install",
+      "row": 1,
+      "detail": "One shared installation initiative for 2 legacy product record(s). Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "start": 2027.6666666666667,
+      "end": 2027.9166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "tiv-adv-allocation-mgmt-zos-migration",
+      "label": "Migrate and stabilize on Tiv Adv Allocation Mgmt z/OS - 0%",
+      "category": "migration",
+      "row": 3,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "predecessors": [
+        "tiv-adv-allocation-mgmt-zos-install"
+      ],
+      "start": 2027.9166666666667,
+      "end": 2028.3333333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-resiliency-storage-2029-06",
+      "label": "Retire 49%",
+      "category": "retirement",
+      "row": 3,
+      "detail": "Products retiring (2): Disk Backup and Restore MIPS; CA 1 Tape Management MIPS. Overall Broadcom completion: 49% (20 of 41 products). Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "predecessors": [
+        "tiv-adv-reporting-dfsmshsm-migration",
+        "zos-dfsms-migration"
+      ],
+      "point": 2029.4166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-resiliency-storage-2028-01",
+      "label": "Retire 12%",
+      "category": "retirement",
+      "row": 1,
+      "detail": "Products retiring (1): Copycat Utility MIPS. Overall Broadcom completion: 12% (5 of 41 products). Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "predecessors": [
+        "tiv-tape-optimizer-zos-migration"
+      ],
+      "point": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-resiliency-storage-2028-05",
+      "label": "Retire 17%",
+      "category": "retirement",
+      "row": 2,
+      "detail": "Products retiring (2): Allocate DASD Space and Placement with Quota Manager Plus; VTAPE Virtual Tape System. Overall Broadcom completion: 17% (7 of 41 products). Strategic priorities: Resiliency; Core Systems Modernization; Digital Systems Modernization.",
+      "predecessors": [
+        "tiv-adv-allocation-mgmt-zos-migration"
+      ],
+      "point": 2028.3333333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "resiliency",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "../../../../schemas/lane.schema.json",
+  "id": "observability",
+  "label": "Observability and Monitoring",
+  "rows": 4,
+  "sub_lane": false,
+  "entries": [
+    {
+      "id": "ibm-z-monitoring-suite-install",
+      "label": "Install and configure IBM Z Monitoring Suite - 0%",
+      "category": "install",
+      "row": 1,
+      "detail": "One shared installation initiative for 9 legacy product record(s). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency.",
+      "start": 2027.1666666666667,
+      "end": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-z-monitoring-suite-migration",
+      "label": "Migrate and stabilize on IBM Z Monitoring Suite - 0%",
+      "category": "migration",
+      "row": 2,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency.",
+      "predecessors": [
+        "ibm-z-monitoring-suite-install"
+      ],
+      "start": 2028,
+      "end": 2028.4166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "omegamon-storage-for-zos-install",
+      "label": "Install and configure OMEGAMON Storage for z/OS - 0%",
+      "category": "install",
+      "row": 1,
+      "detail": "One shared installation initiative for 4 legacy product record(s). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency.",
+      "start": 2030,
+      "end": 2030.5833333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "omegamon-storage-for-zos-migration",
+      "label": "Migrate and stabilize on OMEGAMON Storage for z/OS - 0%",
+      "category": "migration",
+      "row": 2,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency.",
+      "predecessors": [
+        "omegamon-storage-for-zos-install"
+      ],
+      "start": 2030.5833333333333,
+      "end": 2031,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-observability-2028-06",
+      "label": "Retire 39%",
+      "category": "retirement",
+      "row": 1,
+      "detail": "Products retiring (9): SYSVIEW Realtime Performance Management Option for IMS MIPS; SYSVIEW Realtime Performance Management Event Capture Option MIPS; Option for CICS MIPS; SYSVIEW Realtime Performance Management; SYSVIEW Realtime Performance Management Option for WebSphere MQ MIPS; SYSVIEW Performance Management Option for DB2 MIPS; SYSVIEW Realtime Performance Management Option for TCP/IP MIPS; SYSVIEW Realtime Performance Management MIPS; SYSVIEW. Overall Broadcom completion: 39% (16 of 41 products). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency.",
+      "predecessors": [
+        "ibm-z-monitoring-suite-migration"
+      ],
+      "point": 2028.4166666666667,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-observability-2031-01",
+      "label": "Retire 66%",
+      "category": "retirement",
+      "row": 1,
+      "detail": "Products retiring (4): Vantage Storage Resource Manager MIPS; Vantage Storage Resource Management Automation Option MIPS; Allocation Option MIPS; Vantage Storage Resource Manager. Overall Broadcom completion: 66% (27 of 41 products). Strategic priorities: Core Systems Modernization; Digital Systems Modernization; Resiliency.",
+      "predecessors": [
+        "omegamon-storage-for-zos-migration"
+      ],
+      "point": 2031,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    }
+  ]
+}

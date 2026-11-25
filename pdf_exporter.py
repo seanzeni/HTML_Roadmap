@@ -90,7 +90,12 @@ def _draw_detail_pages(canvas: Canvas, data: dict, state: dict, path_label: str,
 
     y = start_page()
     for entry in entries:
-        detail_lines = simpleSplit(_ascii_text(entry.get("detail", "")), "Helvetica", 8, page_width - 92)
+        dependency_text = ""
+        if entry.get("predecessors"):
+            dependency_text = f" Predecessors: {', '.join(entry['predecessors'])}."
+        if entry.get("dependency_warnings"):
+            dependency_text += " WARNING: " + " ".join(entry["dependency_warnings"])
+        detail_lines = simpleSplit(_ascii_text(entry.get("detail", "") + dependency_text), "Helvetica", 8, page_width - 92)
         item_height = 25 + max(1, len(detail_lines)) * 10
         if y - item_height < 34:
             canvas.showPage()
@@ -186,12 +191,16 @@ def export_pdf(data: dict, destination: Path) -> None:
                 y = lane_y - 16 - (entry["row"] + 1) * row_height + 3
                 color = category_colors[entry["category"]]
                 canvas.setFillColor(color)
+                dependency_warning = bool(entry.get("dependency_warnings"))
+                if dependency_warning:
+                    canvas.setStrokeColor(HexColor("#dc2626"))
+                    canvas.setLineWidth(2)
                 if "point" in entry:
                     px = x(entry["point"])
                     canvas.saveState()
                     canvas.translate(px, y + row_height / 2)
                     canvas.rotate(45)
-                    canvas.rect(-4, -4, 8, 8, fill=1, stroke=0)
+                    canvas.rect(-4, -4, 8, 8, fill=1, stroke=1 if dependency_warning else 0)
                     canvas.restoreState()
                     canvas.setFillColor(ui["foreground"])
                     canvas.setFont("Helvetica-Bold", 6.5)
@@ -200,7 +209,7 @@ def export_pdf(data: dict, destination: Path) -> None:
                     start = x(entry["start"])
                     end = x(min(entry["end"], data["end_year"] + 1))
                     bar_width = max(5, end - start - 2)
-                    canvas.roundRect(start, y, bar_width, row_height - 6, 2, fill=1, stroke=0)
+                    canvas.roundRect(start, y, bar_width, row_height - 6, 2, fill=1, stroke=1 if dependency_warning else 0)
                     canvas.setFillColor(ui["bar_text"])
                     canvas.setFont("Helvetica-Bold", 6.5)
                     canvas.drawString(start + 3, y + (row_height - 8) / 2, _shorten(_ascii_text(entry["label"]), bar_width - 6, "Helvetica-Bold", 6.5))

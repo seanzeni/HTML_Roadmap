@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schemas/lane.schema.json",
+  "id": "data-db2",
+  "label": "Data Platforms and DB2",
+  "rows": 4,
+  "sub_lane": false,
+  "entries": [
+    {
+      "id": "tbd-data-db2",
+      "label": "TBD 11 - 0%",
+      "category": "unscheduled",
+      "row": 1,
+      "detail": "Not planned yet (11): Database Analyzer for DB2 for z/OS MIPS -> DB2 Automation Expert; Log Analyzer for DB2 for z/OS MIPS -> DB2 Log Analysis Tool; Plan Analyzer for DB2 for z/OS MIPS -> DB2 SQL Performance Analyzer for z/OS; SYSVIEW for DB2 (Old Insight) -> OMEGAMON for DB2 PE on z/OS; RC/Update for DB2 for z/OS MIPS -> DB2 Administration Tool; RC/Secure for DB2 for z/OS MIPS -> DB2 Administration Tool; RC/Query for DB2 for z/OS MIPS -> DB2 Administration Tool; RC/Migrator for DB2 for z/OS MIPS -> DB2 Administration Tool; Recovery Analyzer for DB2 for z/OS MIPS -> DB2 Recovery Expert; Subsystem Analyzer for DB2 for z/OS MIPS -> DB2 Query Monitor for z/OS; Detector for DB2 for z/OS MIPS -> DB2 Query Monitor for z/OS. The marker is parked at the planning boundary for display only and does not represent a committed date. Strategic priorities: Core Systems Modernization; Digital Systems Modernization.",
+      "point": 2030.92,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "core-modernization",
+        "work_type": "planning",
+        "schedule": "unscheduled"
+      }
+    }
+  ]
+}

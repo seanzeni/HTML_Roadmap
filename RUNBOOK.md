@@ -43,6 +43,37 @@ roadmap.pdf                Printable decision-path output
 4. Fix any validation errors shown in the terminal.
 5. Refresh or reopen `roadmap.html`.
 
+## Collecting manager input in Excel
+
+Use `examples/software-roadmap-intake-template.xlsx` when contributors should not edit JSON directly. The workbook contains instructions and separate sheets for settings, categories, filter options, lanes, work items, and entry-to-filter mappings.
+
+Convert a completed workbook into the normal JSON configuration:
+
+```powershell
+python excel_to_roadmap_json.py examples\software-roadmap-intake-template.xlsx --output config\from-excel
+```
+
+The converter uses `config/settings.json` as the default source for color schemes. Choose another base settings file when needed:
+
+```powershell
+python excel_to_roadmap_json.py manager-input.xlsx --output config\from-excel --base-settings config\settings.json
+```
+
+Then validate and generate the roadmap normally:
+
+```powershell
+python roadmap_generator.py config\from-excel --validate-only
+python roadmap_generator.py config\from-excel --output roadmap-from-excel.html
+```
+
+The converter requires the Python `openpyxl` package. If it is missing, install it with:
+
+```powershell
+python -m pip install openpyxl
+```
+
+Treat the generated JSON as the canonical roadmap configuration. Keep the Excel workbook as the manager intake document rather than teaching the generator two independent input formats.
+
 ## Validate without creating files
 
 Use this before sharing or committing configuration changes:
@@ -209,6 +240,15 @@ After creating a lane file, add its ID to `lane_order` in `settings.json`.
 - `row`: Must be between `1` and the lane's row limit.
 - `when`: Optional filter criteria.
 - `detail`: Longer explanation shown when the active bar is selected.
+- `predecessors`: Optional list of entry IDs that must finish before this entry begins. The generator rejects missing IDs and circular dependencies, and warns when the scheduled dates conflict.
+
+Example:
+
+```json
+"predecessors": ["zos-upgrade", "security-readiness"]
+```
+
+In the Excel intake workbook, enter multiple predecessor IDs in `predecessor_ids` separated by commas. On **Entry Filters**, select `filter_id` before `option_value`; the second dropdown is restricted to the selected filter's assignment values.
 
 ## Adding a decision point
 

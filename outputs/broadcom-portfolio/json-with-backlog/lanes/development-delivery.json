@@ -1,0 +1,221 @@
+{
+  "$schema": "../../../../schemas/lane.schema.json",
+  "id": "development-delivery",
+  "label": "Development and Delivery Tools",
+  "rows": 6,
+  "sub_lane": false,
+  "entries": [
+    {
+      "id": "endevor-decision",
+      "label": "Endevor replacement decision - 0%",
+      "category": "decision",
+      "row": 1,
+      "detail": "January 2027 decision point to select the Endevor replacement approach. Strategic priorities: I/S Operating Model and Governance; Digital Systems Modernization; Core Systems Modernization.",
+      "point": 2027,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "operating-model-governance",
+        "work_type": "decision",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "data-set-commander-for-zos-install",
+      "label": "Install and configure Data Set Commander for z/OS - 0%",
+      "category": "install",
+      "row": 3,
+      "detail": "One shared installation initiative for 1 legacy product record(s). Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "start": 2027.3333333333333,
+      "end": 2027.5833333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "data-set-commander-for-zos-migration",
+      "label": "Migrate and stabilize on Data Set Commander for z/OS - 0%",
+      "category": "migration",
+      "row": 1,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "predecessors": [
+        "data-set-commander-for-zos-install"
+      ],
+      "start": 2027.5833333333333,
+      "end": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-migration-utility-for-zos-imu-install",
+      "label": "Install and configure IBM Migration Utility for z/OS (IMU) - 0%",
+      "category": "install",
+      "row": 2,
+      "detail": "One shared installation initiative for 1 legacy product record(s). Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "start": 2027,
+      "end": 2027.5833333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-migration-utility-for-zos-imu-migration",
+      "label": "Migrate and stabilize on IBM Migration Utility for z/OS (IMU) - 0%",
+      "category": "migration",
+      "row": 6,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "predecessors": [
+        "ibm-migration-utility-for-zos-imu-install"
+      ],
+      "start": 2027.5833333333333,
+      "end": 2030.5,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-file-manager-for-zos-install",
+      "label": "Install and configure IBM File Manager for z/OS - 0%",
+      "category": "install",
+      "row": 4,
+      "detail": "One shared installation initiative for 2 legacy product record(s). Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "start": 2027.3333333333333,
+      "end": 2027.5833333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-file-manager-for-zos-migration",
+      "label": "Migrate and stabilize on IBM File Manager for z/OS - 0%",
+      "category": "migration",
+      "row": 5,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "predecessors": [
+        "ibm-file-manager-for-zos-install"
+      ],
+      "start": 2027.5833333333333,
+      "end": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-debugger-for-zos-install",
+      "label": "Install and configure IBM Debugger for z/OS - 0%",
+      "category": "install",
+      "row": 3,
+      "detail": "One shared installation initiative for 2 legacy product record(s). Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "start": 2028,
+      "end": 2028.5833333333333,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "install",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "ibm-debugger-for-zos-migration",
+      "label": "Migrate and stabilize on IBM Debugger for z/OS - 0%",
+      "category": "migration",
+      "row": 1,
+      "detail": "Includes migration plus the required minimum three-month stabilization window. Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "predecessors": [
+        "ibm-debugger-for-zos-install"
+      ],
+      "start": 2028.5833333333333,
+      "end": 2029,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "migration",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-development-delivery-2028-01",
+      "label": "Retire 12%",
+      "category": "retirement",
+      "row": 2,
+      "detail": "Products retiring (3): PDSMAN Library Management Plus; File Master Plus MIPS; File Master Plus for IMS MIPS. Overall Broadcom completion: 12% (5 of 41 products). Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "predecessors": [
+        "data-set-commander-for-zos-migration",
+        "ibm-file-manager-for-zos-migration"
+      ],
+      "point": 2028,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-development-delivery-2030-07",
+      "label": "Retire 56%",
+      "category": "retirement",
+      "row": 1,
+      "detail": "Products retiring (1): Easytrieve. Overall Broadcom completion: 56% (23 of 41 products). Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "predecessors": [
+        "ibm-migration-utility-for-zos-imu-migration"
+      ],
+      "point": 2030.5,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "retire-development-delivery-2029-01",
+      "label": "Retire 44%",
+      "category": "retirement",
+      "row": 2,
+      "detail": "Products retiring (2): InterTest for CICS for z/OS Plus; InterTest Batch Plus. Overall Broadcom completion: 44% (18 of 41 products). Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "predecessors": [
+        "ibm-debugger-for-zos-migration"
+      ],
+      "point": 2029,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "retirement",
+        "schedule": "scheduled"
+      }
+    },
+    {
+      "id": "tbd-development-delivery",
+      "label": "TBD 3 - 0%",
+      "category": "unscheduled",
+      "row": 2,
+      "detail": "Not planned yet (3): Change Manager Enterprise Workbench -> IBM DBB / DevOps Deploy; Endevor -> IBM DBB / ChangeMan / ADFz; HostBridge -> Replacement TBD. The marker is parked at the planning boundary for display only and does not represent a committed date. Strategic priorities: Digital Systems Modernization; Core Systems Modernization.",
+      "point": 2030.92,
+      "when": {
+        "strategy": "broadcom",
+        "priority": "digital-modernization",
+        "work_type": "planning",
+        "schedule": "unscheduled"
+      }
+    }
+  ]
+}
